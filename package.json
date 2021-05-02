@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "safe-install",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "description": "Installs your packages locally and excludes huge local utilities (like `nyc`) installing.",
+  "keywords": [
+    "cli",
+    "utility",
+    "install",
+    "management",
+    "package",
+    "npm"
+  ],
+  "author": "retueze",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/return-0x0/node-safe-install"
+  },
+  "bin": {
+    "safe-install": "bin/safe-install.js"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "buildTsDev": "tsc -p tsconfig.dev.json",
+    "buildDev": "npm run buildTsDev",
+    "buildTsProd": "tsc -p tsconfig.prod.json",
+    "buildProd": "npm run buildTsProd",
+    "prepare": "rd /s /q lib && rd /s /q types && npm run buildProd"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "@typescript-eslint/parser": "^4.22.0",
+    "typescript": "^4.2.4"
+  }
+}
